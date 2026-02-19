@@ -10,7 +10,7 @@ spec:
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
-  storageClassName: db-local-dev
+  storageClassName: rmq-local-learn
   local:
     path: /mnt/message-brokers/rmq-learn
   nodeAffinity:
