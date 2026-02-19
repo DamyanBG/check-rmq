@@ -1,0 +1,17 @@
+# Decided to use service of type load balancer
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: rmq-tcp
+  namespace: rmq-learn
+spec:
+  entryPoints:
+    - rmq-tcp    
+  routes:
+    - match: HostSNI(`*`) 
+      services:
+        - name: rmq-svc
+          port: 5672
+        - name: rmq-svc
+          port: 15672
